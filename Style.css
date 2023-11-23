@@ -25,11 +25,23 @@ height: 55px;
 text-align: center;
 font-family: 'Cinzel';
 line-height: 1;
+border-radius: 30px;
+border: 1px solid #fff;
+transition: 1s ease-in-out;
+}
+.btn a:hover{
+    background-color: var(--Primary);
+    transition: 1s ease-in-out;
 }
 .btn{
     text-align: center;
     margin-top: 30px;
 
+}
+.navmobile{
+
+    font-family: 'Cinzel';
+font-size: 18px;
 }
 @media screen and (max-width: 786px)   {
     .navmobile{
@@ -102,12 +114,13 @@ padding:15% 40px 15% 40px;
 color: #fff;
 padding: 20px;
 text-decoration: none;
-
+border-radius: 30px;
 
 }
 .nav a:hover{
 background-color: var(--secondary);
-
+border-radius: 30px;
+transition: 1s ease-in-out;
 }
 .raw{
 width: 100%;
