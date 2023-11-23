@@ -7,29 +7,89 @@
 
 
 }
+a{
+text-decoration: none;
+
+}
+:root{
+    --Primary: #020611;
+    --secondary:#ba884c;
+}
+.btn a{
+padding:20px;
+background-color: var(--secondary);
+color: #fff;
+display:inline-block;
+width: 280px;
+height: 55px;
+text-align: center;
+font-family: 'Cinzel';
+line-height: 1;
+}
+.btn{
+    text-align: center;
+    margin-top: 30px;
+
+}
 @media screen and (max-width: 786px)   {
-    .nav{
+    .navmobile{
 display: block !important;
 height: 100vh;
 background-color: red;
 position: absolute;
 left: auto;
-right: 0px;
+right: -300px;
 top: 0px;
-padding: 50px 20px; 
-width: 50%;
+padding: 110px 20px; 
+width:300px;
+transition: 1s ease-in-out;
+font-family: 'Cinzel';
+font-size: 18px;
+    }
+    label{
+z-index: 2;
+
     }
     .nav a{
 display: block;
 
     }
+    
+.fa {
+color: #fff;
+font-size: 30px;
+z-index: 5;
+}
+i.fa.fa-times, input {
+display:none;
+
+}
+input:checked~label~.navmobile{
+
+right:0px !important;
+left:auto;
+}
+input:checked~label i.fa.fa-times{
+
+    display: block;
+    }
+    input:checked~label i.fa.fa-bars{
+
+        display: none;
+        }
 }
 
+@media screen and (min-width: 786px) {
+    .icon{
+display: none;
 
-:root{
-    --Primary: #020611;
-    --secondary:#ba884c;
+    }
+    input{
+        display: none;
+
+    }
 }
+
 .logo {
     width: 120px;
 }
@@ -79,9 +139,10 @@ padding: 100px 40px 100px 40px;
 }
 h1,h2,h3,h4{
 
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-family:'Cinzel';
  color: #333;
 line-height: 1.5;
+letter-spacing: 4px;
 }
 p{
 font-family:serif;
