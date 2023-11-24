@@ -7,6 +7,78 @@
     <title>Document</title>
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        // ajax call
+        
+        
+        
+        
+        $.ajax ({
+            url:'https://sheet2api.com/v1/TcEStje2Q1Cu/api-test' ,
+            Type:'GET',
+            dataType:'json',
+            success:function(data){
+         
+         
+        for(i=0; i<=data.length; i++){
+         
+        let dataInHtml=`<div class="con"><h2 id="${data[i].id}">${data[i].Designer}</h2><p class="Spon">${data[i].Spon} </p><p id="${data[i].id}"> Pages  ${data[i].Pages}</p> <p class="project">${data[i].Project} </p><p class="QA">QA ${data[i].QA} </p><p class="Status">${data[i].Status} </p></div>`;
+        
+        
+         
+         
+        $('#root').append(dataInHtml);
+         $("p:contains(QA Complete)").css("background-color", "green");
+          $("p:contains(Under QA)").css("background-color", "yellow");
+           $("p:contains(Query)").css("background-color", "red");
+             $("p:contains(Active)").css("background-color", "blue");
+              $("p:contains(Under Designing)").css("background-color", "pink");
+           $("#QA").click(function(){
+            $("p:contains(Under QA)").parent().toggleClass("dd");
+          $(".dd").toggle();
+             $("p:contains(Query)").parent().toggleClass("dd");
+             $("p:contains(Active)").parent().toggleClass("dd");
+                 $("p:contains(Under Designing)").parent().toggleClass("dd");
+           });
+           $("#Active").click(function(){
+            $("p:contains(Under QA)").parent().toggleClass("cc");
+          $(".cc").toggle();
+             $("p:contains(Query)").parent().toggleClass("cc");
+             $("p:contains(QA Complete)").parent().toggleClass("cc");
+                 $("p:contains(Under Designing)").parent().toggleClass("cc");
+           });
+            $("#Under").click(function(){
+            $("p:contains(Under QA)").parent().toggleClass("dd");
+          $(".dd").toggle();
+             $("p:contains(Query)").parent().toggleClass("dd");
+             $("p:contains(Active)").parent().toggleClass("dd");
+                 $("p:contains(QA Complete)").parent().toggleClass("dd");
+           });
+           
+           
+        }
+           
+            }
+        });
+        
+        
+        
+        $(document).ready(function(){
+            $("#scan").on("keyup", function() {
+              var value = $(this).val().toLowerCase();
+              $("#root .con").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+              });
+            });
+          });
+         
+        
+         
+        
+        </script>
+
 </head>
 <body >
     <section class="main">
@@ -34,6 +106,26 @@
 <div class="btn"><a href="">Click Here</a></div>
     </div>
 
+</section>
+<section class="ajax">
+
+    <div class="raw padding">
+        <label>Search
+            <input type="text" id="scan" placeholder="Click Here For Search sheet data"></label>
+            <input type="checkbox" id="QA"> QA Complete
+            <input type="checkbox" id="Active"> Active
+            <input type="checkbox" id="Under">Under Designing
+            
+                    <section id="root" >
+            
+            
+            
+                       
+            
+                    </section>
+
+
+    </div>
 </section>
 
 </section>
