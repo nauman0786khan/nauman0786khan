@@ -30,7 +30,7 @@
          
          
         $('#root').append(dataInHtml);
-         $("p:contains(QA Complete)").css("background-color", "green");
+         $("p:contains(QA Complete)").css("background-color", "");
           $("p:contains(Under QA)").css("background-color", "yellow");
            $("p:contains(Query)").css("background-color", "red");
              $("p:contains(Active)").css("background-color", "blue");
@@ -103,19 +103,21 @@
 <section class="hero">
     <div class="raw ">
 <h1>This is my Google sheet update By Ajax</h1>
-<div class="btn"><a href="">Click Here</a></div>
+<div class="btn"><a href="#aj">Click Here</a></div>
     </div>
 
 </section>
-<section class="ajax">
+<section class="ajax" id="aj">
 
     <div class="raw padding">
-        <label>Search
-            <input type="text" id="scan" placeholder="Click Here For Search sheet data"></label>
+        <label class="fa fa-search">
+       
+            <input type="text" id="scan"  placeholder="Click Here For Search sheet data"></label>
+            <div class="chec">
             <input type="checkbox" id="QA"> QA Complete
             <input type="checkbox" id="Active"> Active
             <input type="checkbox" id="Under">Under Designing
-            
+          </div>
                     <section id="root" >
             
             
@@ -127,7 +129,18 @@
 
     </div>
 </section>
+<footer>
 
+  <section>
+  <div class="raw padding logo">
+  
+    <img src="/images/NK lOGO.jpeg" alt="">
+  </div>
+  
+  
+  </section>
+  
+  </footer>
 </section>
 </body>
 </html>
