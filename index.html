@@ -9,75 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script>
-        // ajax call
-        
-        
-        
-        
-        $.ajax ({
-            url:'https://sheet2api.com/v1/TcEStje2Q1Cu/api-test' ,
-            Type:'GET',
-            dataType:'json',
-            success:function(data){
-         
-         
-        for(i=0; i<=data.length; i++){
-         
-        let dataInHtml=`<div class="con"><h2 id="${data[i].id}">${data[i].Designer}</h2><p class="Spon">${data[i].Spon} </p><p id="${data[i].id}"> Pages  ${data[i].Pages}</p> <p class="project">${data[i].Project} </p><p class="QA">QA ${data[i].QA} </p><p class="Status">${data[i].Status} </p></div>`;
-        
-        
-         
-         
-        $('#root').append(dataInHtml);
-         $("p:contains(QA Complete)").css("background-color", "");
-          $("p:contains(Under QA)").css("background-color", "yellow");
-           $("p:contains(Query)").css("background-color", "red");
-             $("p:contains(Active)").css("background-color", "blue");
-              $("p:contains(Under Designing)").css("background-color", "pink");
-           $("#QA").click(function(){
-            $("p:contains(Under QA)").parent().toggleClass("dd");
-          $(".dd").toggle();
-             $("p:contains(Query)").parent().toggleClass("dd");
-             $("p:contains(Active)").parent().toggleClass("dd");
-                 $("p:contains(Under Designing)").parent().toggleClass("dd");
-           });
-           $("#Active").click(function(){
-            $("p:contains(Under QA)").parent().toggleClass("cc");
-          $(".cc").toggle();
-             $("p:contains(Query)").parent().toggleClass("cc");
-             $("p:contains(QA Complete)").parent().toggleClass("cc");
-                 $("p:contains(Under Designing)").parent().toggleClass("cc");
-           });
-            $("#Under").click(function(){
-            $("p:contains(Under QA)").parent().toggleClass("dd");
-          $(".dd").toggle();
-             $("p:contains(Query)").parent().toggleClass("dd");
-             $("p:contains(Active)").parent().toggleClass("dd");
-                 $("p:contains(QA Complete)").parent().toggleClass("dd");
-           });
-           
-           
-        }
-           
-            }
-        });
-        
-        
-        
-        $(document).ready(function(){
-            $("#scan").on("keyup", function() {
-              var value = $(this).val().toLowerCase();
-              $("#root .con").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-              });
-            });
-          });
-         
-        
-         
-        
-        </script>
+  <script src="/Script.js"></script>
 
 </head>
 <body >
@@ -99,6 +31,7 @@
      </div>
     </div>
 </section>
+
     </header>
 <section class="hero">
   <div class="flex raw">
@@ -134,6 +67,21 @@
 
 
     </div>
+</section>
+<section class="input">
+
+  <div class="raw padding">
+
+  <h2>Upadte Sheed By Formt</h2>
+
+
+  <form action="" id="ff">
+<input type="text" name="Name" placeholder="Name" id="scan">
+<input type="email" name="email" placeholder="E-mail" id="scan">
+<button type="submit" Class="sub"> submit</button>
+
+  </form>
+</div>
 </section>
 <footer>
 
