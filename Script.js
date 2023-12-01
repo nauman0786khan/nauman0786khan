@@ -9,8 +9,8 @@
         Type:'GET',
         dataType:'json',
         success:function(data){
-     
-     
+   
+    
     for(i=0; i<=data.length; i++){
      
     let dataInHtml=`<div class="con"><h2 id="${data[i].id}">${data[i].Designer}</h2><p class="Spon">${data[i].Spon} </p><p id="${data[i].id}"> Pages  ${data[i].Pages}</p> <p class="project">${data[i].Project} </p><p class="QA">QA ${data[i].QA} </p><p class="Status">${data[i].Status} </p></div>`;
@@ -50,21 +50,27 @@
     
     
     $(function(){
-      $("#ff").on("submit", function(event) {
-          event.preventDefault();
-
-          var formData = {
-              'email': $('input[name=email]').val() //for get email 
-          };
-          console.log(formData);
-
-          $.ajax({
-              url: "https://sheet2api.com/v1/TcEStje2Q1Cu/api-test",
-              type: "post",
-              data: formData,
-              success: function(d) {
-                  alert(d);
-              }
-          });
-      });
-  }) 
+        $("#ff").on("submit", function(event) {
+            event.preventDefault();
+  
+            var formData = {
+              'NN': $('input[name=Name]').val(),
+                'Designer': $('input[name=email]').val() //for get email 
+            };
+            console.log(formData);
+  
+            $.ajax({
+                url: "https://sheet2api.com/v1/TcEStje2Q1Cu/api-test",
+                type: "post",
+                data:formData,
+                success: function(data) {
+                    alert(data);
+                    console.log(data)
+                 
+                }
+  
+                
+            });
+        });
+        
+    }) 
