@@ -60,12 +60,12 @@
             console.log(formData);
   
             $.ajax({
-                url: "Apitest.json",
+                url: "post.json",
                 type: "post",
                 data:formData,        
-                success:function(formData) {
+                success:function(data) {
                   
-                    console.log(formData)
+                    console.log(data)
                  
                 }
   
