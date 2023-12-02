@@ -5,11 +5,11 @@
     
     
     $.ajax ({
-        url:'https://sheet2api.com/v1/TcEStje2Q1Cu/api-test' ,
+        url:'Apitest.json' ,
         Type:'GET',
         dataType:'json',
         success:function(data){
-   
+   console.log(data)
     
     for(i=0; i<=data.length; i++){
      
@@ -60,12 +60,12 @@
             console.log(formData);
   
             $.ajax({
-                url: "https://sheet2api.com/v1/TcEStje2Q1Cu/api-test",
+                url: "Apitest.json",
                 type: "post",
-                data:formData,
-                success: function(data) {
-                    alert(data);
-                    console.log(data)
+                data:formData,        
+                success:function(formData) {
+                  
+                    console.log(formData)
                  
                 }
   
