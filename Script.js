@@ -5,7 +5,7 @@
     
     
     $.ajax ({
-        url:'./Apitest.json' ,
+        url:'../Apitest.json' ,
         Type:'GET',
         dataType:'json',
         success:function(data){
