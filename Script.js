@@ -5,7 +5,7 @@
     
     
     $.ajax ({
-        url:'Apitest.json' ,
+        url:'./Apitest.json' ,
         Type:'GET',
         dataType:'json',
         success:function(data){
@@ -60,7 +60,7 @@
             console.log(formData);
   
             $.ajax({
-                url: "post.json",
+                url: "https://jsonplaceholder.typicode.com/photos",
                 type: "post",
                 data:formData,        
                 success:function(data) {
