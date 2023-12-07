@@ -60,17 +60,22 @@
             console.log(formData);
   
             $.ajax({
-                url: "post.json",
+                url: "https://jsonplaceholder.typicode.com/users",
                 type: "post",
                 data:formData,        
                 success:function(data) {
                   
                     console.log(data)
+                    for(i=0; i==11; i++){
+                        console.log(data[i])
+                                 }
                  
                 }
   
                 
             });
+            
+           
         });
         
     }) 
