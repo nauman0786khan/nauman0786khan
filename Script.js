@@ -49,33 +49,13 @@
     });
     
     
-    $(function(){
-        $("#ff").on("submit", function(event) {
-            event.preventDefault();
-  
-            var formData = {
-              'NN': $('input[name=Name]').val(),
-                'Designer': $('input[name=email]').val() //for get email 
-            };
-            console.log(formData);
-  
-            $.ajax({
-                url: "https://jsonplaceholder.typicode.com/users",
-                type: "post",
-                data:formData,        
-                success:function(data) {
-                  
-                    console.log(data)
-                    for(i=0; i==11; i++){
-                        console.log(data[i])
-                                 }
-                 
-                }
-  
-                
-            });
-            
-           
+    
+    $(document).ready(function(){
+        $("#scan").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#root .con").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
         });
-        
-    }) 
+      });
+     
